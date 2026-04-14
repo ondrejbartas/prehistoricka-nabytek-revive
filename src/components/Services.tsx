@@ -91,7 +91,7 @@ const Services = () => {
             ))}
           </div>
           <p className="mt-10 text-center font-body text-foreground font-medium">
-            🎨 Náš architekt pro vás <span className="text-primary">zdarma</span> připraví návrh interiéru.
+            Náš architekt pro vás <span className="text-primary">zdarma</span> připraví návrh interiéru.
           </p>
         </div>
       </div>
