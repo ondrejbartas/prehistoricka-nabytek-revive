@@ -34,8 +34,10 @@ const WhyUs = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {reasons.map((r, i) => (
-            <div key={i}>
-              <r.icon className="w-8 h-8 text-primary mb-5" strokeWidth={1.5} />
+            <div key={i} className="text-center">
+              <div className="flex justify-center mb-5">
+                <r.icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg font-display font-semibold text-foreground mb-2">{r.title}</h3>
               <p className="text-muted-foreground font-body leading-relaxed text-sm">{r.text}</p>
             </div>
