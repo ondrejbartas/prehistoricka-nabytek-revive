@@ -1,4 +1,5 @@
 import { Armchair, DoorOpen, BedDouble, Baby, Footprints, PencilRuler } from "lucide-react";
+import kitchenImg from "@/assets/kitchen.jpg";
 import wardrobeImg from "@/assets/wardrobe.jpg";
 import officeImg from "@/assets/office.jpg";
 import bathroomImg from "@/assets/bathroom.jpg";
@@ -7,7 +8,7 @@ const featuredServices = [
   {
     title: "Kuchyně",
     description: "Kuchyňské linky a ostrůvky přesně podle vašich představ a rozměrů místnosti.",
-    image: null,
+    image: kitchenImg,
   },
   {
     title: "Skříně & šatny",
