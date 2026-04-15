@@ -1,5 +1,10 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 
+const contacts = [
+  { name: "Ondřej Mužík", phone: "+420728935142", label: "728 935 142" },
+  { name: "Stanislav Mužík", phone: "+420602203739", label: "602 203 739" },
+];
+
 const Contact = () => {
   return (
     <section id="kontakt" className="section-padding bg-foreground">
@@ -15,10 +20,18 @@ const Contact = () => {
             </p>
 
             <div className="space-y-6">
-              <a href="tel:+420602203739" className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors">
-                <Phone className="w-5 h-5 text-primary" />
-                <span className="font-body text-lg">602 203 739</span>
-              </a>
+              <div className="space-y-4">
+                {contacts.map((contact) => (
+                  <a
+                    key={contact.phone}
+                    href={`tel:${contact.phone}`}
+                    className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors"
+                  >
+                    <Phone className="w-5 h-5 text-primary" />
+                    <span className="font-body text-lg">{contact.name}: {contact.label}</span>
+                  </a>
+                ))}
+              </div>
               <a href="mailto:info@pro-int.cz" className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors">
                 <Mail className="w-5 h-5 text-primary" />
                 <span className="font-body text-lg">info@pro-int.cz</span>
@@ -35,9 +48,16 @@ const Contact = () => {
 
           <div className="flex flex-col justify-center">
             <div className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-sm p-8">
-              <h3 className="font-display text-xl font-semibold text-primary-foreground mb-2">
+              <h3 className="font-display text-xl font-semibold text-primary-foreground mb-4">
                 Pro-Int Stanislav Mužík
               </h3>
+              <div className="space-y-2 mb-6">
+                {contacts.map((contact) => (
+                  <p key={contact.phone} className="font-body text-primary-foreground/80">
+                    {contact.name}: {contact.label}
+                  </p>
+                ))}
+              </div>
               <p className="text-primary-foreground/50 font-body text-sm mb-6">
                 IČ: 40010902 · DIČ: CZ6803301769
               </p>
