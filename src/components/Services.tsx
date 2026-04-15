@@ -60,7 +60,7 @@ const Services = () => {
                     width={800}
                     height={600}
                     loading="lazy"
-                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full aspect-[3/2] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               )}
