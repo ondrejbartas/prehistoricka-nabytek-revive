@@ -1,14 +1,14 @@
 import { Armchair, DoorOpen, BedDouble, Baby, Footprints, PencilRuler } from "lucide-react";
-import kitchenImg from "@/assets/kitchen.jpg";
-import wardrobeImg from "@/assets/wardrobe.jpg";
-import officeImg from "@/assets/office.jpg";
-import bathroomImg from "@/assets/bathroom.jpg";
+import kuchynImg from "@/assets/gallery/kuchyn-5.png";
+import wardrobeImg from "@/assets/gallery/loznice-2b.png";
+import officeImg from "@/assets/gallery/pokoj-detsky-1.png";
+import bathroomImg from "@/assets/gallery/koupelna-2.png";
 
 const featuredServices = [
   {
     title: "Kuchyně",
     description: "Kuchyňské linky a ostrůvky přesně podle vašich představ a rozměrů místnosti.",
-    image: kitchenImg,
+    image: kuchynImg,
   },
   {
     title: "Skříně & šatny",
@@ -53,7 +53,7 @@ const Services = () => {
           {featuredServices.map((service, i) => (
             <div key={i} className="group">
               {service.image && (
-                <div className="overflow-hidden rounded-sm mb-5">
+                <div className="overflow-hidden rounded-sm mb-5 bg-muted">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -74,7 +74,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Additional services */}
         <div className="mt-16 border-t border-border pt-12">
           <h3 className="font-display text-xl font-semibold text-foreground mb-8 text-center">
             Dále vyrábíme na míru
