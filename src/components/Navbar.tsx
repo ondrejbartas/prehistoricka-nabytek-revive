@@ -9,10 +9,9 @@ const links = [
   { label: "Kontakt", href: "#kontakt" },
 ];
 
-const ondrejContact = {
-  name: "Ondřej",
-  phone: "+420728935142",
-  label: "Zavolat Ondřejovi",
+const ctaEmail = {
+  href: "mailto:info@pro-int.cz",
+  label: "Napište nám",
 };
 
 const Navbar = () => {
