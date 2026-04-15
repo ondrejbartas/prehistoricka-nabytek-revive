@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-kitchen.jpg";
+import heroImage from "@/assets/gallery/obyvaci-pokoj-1.png";
 import { Phone } from "lucide-react";
 
 const Hero = () => {
@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Kuchyně na míru od Pro-Int"
+          alt="Obývací stěna na míru od Pro-Int"
           width={1920}
           height={1080}
           className="w-full h-full object-cover"
