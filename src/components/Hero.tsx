@@ -1,4 +1,4 @@
-import heroImage from "@/assets/gallery/hero-image.png";
+import heroImage from "@/assets/gallery/hero-image.webp";
 import { Mail } from "lucide-react";
 
 const Hero = () => {

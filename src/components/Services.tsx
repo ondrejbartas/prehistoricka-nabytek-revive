@@ -1,8 +1,8 @@
 import { Armchair, DoorOpen, BedDouble, Baby, Footprints, PencilRuler } from "lucide-react";
-import kuchynImg from "@/assets/gallery/kuchyn-5.png";
-import wardrobeImg from "@/assets/gallery/loznice-2b.png";
-import officeImg from "@/assets/gallery/pokoj-detsky-1.png";
-import bathroomImg from "@/assets/gallery/koupelna-2.png";
+import kuchynImg from "@/assets/gallery/kuchyn-5.webp";
+import wardrobeImg from "@/assets/gallery/loznice-2b.webp";
+import officeImg from "@/assets/gallery/pokoj-detsky-1.webp";
+import bathroomImg from "@/assets/gallery/koupelna-2.webp";
 
 const featuredServices = [
   {

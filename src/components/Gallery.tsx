@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-import koupelna1 from "@/assets/gallery/koupelna-1.png";
-import koupelna2 from "@/assets/gallery/koupelna-2.png";
-import koupelna3 from "@/assets/gallery/koupelna-3.png";
-import kuchyn1 from "@/assets/gallery/kuchyn-1.png";
-import kuchyn2 from "@/assets/gallery/kuchyn-2.png";
-import kuchyn3 from "@/assets/gallery/kuchyn-3.png";
-import kuchyn4 from "@/assets/gallery/kuchyn-4.png";
-import kuchyn5 from "@/assets/gallery/kuchyn-5.png";
-import kuchyn6 from "@/assets/gallery/kuchyn-6.png";
-import loznice1 from "@/assets/gallery/loznice-1.png";
-import loznice2a from "@/assets/gallery/loznice-2a.png";
-import loznice2b from "@/assets/gallery/loznice-2b.png";
-import obyvaciPokoj1 from "@/assets/gallery/obyvaci-pokoj-1.png";
-import pokojDetsky1 from "@/assets/gallery/pokoj-detsky-1.png";
-import pokojDetsky2 from "@/assets/gallery/pokoj-detsky-2.png";
-import pokojDetsky3 from "@/assets/gallery/pokoj-detsky-3.png";
-import pokojDetsky4 from "@/assets/gallery/pokoj-detsky-4.png";
+import koupelna1 from "@/assets/gallery/koupelna-1.webp";
+import koupelna2 from "@/assets/gallery/koupelna-2.webp";
+import koupelna3 from "@/assets/gallery/koupelna-3.webp";
+import kuchyn1 from "@/assets/gallery/kuchyn-1.webp";
+import kuchyn2 from "@/assets/gallery/kuchyn-2.webp";
+import kuchyn3 from "@/assets/gallery/kuchyn-3.webp";
+import kuchyn4 from "@/assets/gallery/kuchyn-4.webp";
+import kuchyn5 from "@/assets/gallery/kuchyn-5.webp";
+import kuchyn6 from "@/assets/gallery/kuchyn-6.webp";
+import loznice1 from "@/assets/gallery/loznice-1.webp";
+import loznice2a from "@/assets/gallery/loznice-2a.webp";
+import loznice2b from "@/assets/gallery/loznice-2b.webp";
+import obyvaciPokoj1 from "@/assets/gallery/obyvaci-pokoj-1.webp";
+import pokojDetsky1 from "@/assets/gallery/pokoj-detsky-1.webp";
+import pokojDetsky2 from "@/assets/gallery/pokoj-detsky-2.webp";
+import pokojDetsky3 from "@/assets/gallery/pokoj-detsky-3.webp";
+import pokojDetsky4 from "@/assets/gallery/pokoj-detsky-4.webp";
 
 const galleryItems = [
   { src: kuchyn1, alt: "Moderní kuchyňská linka na míru v světlém dekoru", label: "Kuchyně" },
