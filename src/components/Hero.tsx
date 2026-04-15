@@ -1,4 +1,4 @@
-import heroImage from "@/assets/gallery/obyvaci-pokoj-1.png";
+import heroImage from "@/assets/gallery/hero-image.png";
 import { Phone } from "lucide-react";
 
 const contacts = [
