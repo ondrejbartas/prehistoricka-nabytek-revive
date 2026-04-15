@@ -9,10 +9,9 @@ const links = [
   { label: "Kontakt", href: "#kontakt" },
 ];
 
-const ondrejContact = {
-  name: "Ondřej",
-  phone: "+420728935142",
-  label: "Zavolat Ondřejovi",
+const ctaEmail = {
+  href: "mailto:info@pro-int.cz",
+  label: "Napište nám",
 };
 
 const Navbar = () => {
@@ -37,10 +36,10 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href={`tel:${ondrejContact.phone}`}
+            href={ctaEmail.href}
             className="bg-primary text-primary-foreground px-5 py-2 rounded-sm font-body text-sm font-semibold hover:opacity-90 transition-opacity"
           >
-            {ondrejContact.label}
+            {ctaEmail.label}
           </a>
         </div>
 
@@ -66,10 +65,10 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href={`tel:${ondrejContact.phone}`}
+            href={ctaEmail.href}
             className="block bg-primary text-primary-foreground px-5 py-3 rounded-sm font-body text-center font-semibold"
           >
-            {ondrejContact.label}
+            {ctaEmail.label}
           </a>
         </div>
       )}

@@ -1,9 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 
-const contacts = [
-  { name: "Ondřej Mužík", phone: "+420728935142", label: "728 935 142" },
-  { name: "Stanislav Mužík", phone: "+420602203739", label: "602 203 739" },
-];
+const contact = { name: "Stanislav Mužík", phone: "+420602203739", label: "602 203 739" };
 
 const Contact = () => {
   return (
@@ -16,22 +13,21 @@ const Contact = () => {
               Pojďme vytvořit něco krásného
             </h2>
             <p className="text-primary-foreground/60 font-body leading-relaxed mb-10">
-              Zavolejte nám nebo napište. Rádi s vámi probereme vaše představy a připravíme nezávazný návrh.
+              Napište nám nebo zavolejte. Rádi s vámi probereme vaše představy a připravíme nezávazný návrh.
             </p>
 
             <div className="space-y-6">
-              <div className="space-y-4">
-                {contacts.map((contact) => (
-                  <a
-                    key={contact.phone}
-                    href={`tel:${contact.phone}`}
-                    className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors"
-                  >
-                    <Phone className="w-5 h-5 text-primary" />
-                    <span className="font-body text-lg">{contact.name}: {contact.label}</span>
-                  </a>
-                ))}
-              </div>
+              <a href="mailto:info@pro-int.cz" className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors">
+                <Mail className="w-5 h-5 text-primary" />
+                <span className="font-body text-lg">info@pro-int.cz</span>
+              </a>
+              <a
+                href={`tel:${contact.phone}`}
+                className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors"
+              >
+                <Phone className="w-5 h-5 text-primary" />
+                <span className="font-body text-lg">{contact.name}: {contact.label}</span>
+              </a>
               <a href="mailto:info@pro-int.cz" className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors">
                 <Mail className="w-5 h-5 text-primary" />
                 <span className="font-body text-lg">info@pro-int.cz</span>
@@ -52,11 +48,9 @@ const Contact = () => {
                 Pro-Int Stanislav Mužík
               </h3>
               <div className="space-y-2 mb-6">
-                {contacts.map((contact) => (
-                  <p key={contact.phone} className="font-body text-primary-foreground/80">
-                    {contact.name}: {contact.label}
-                  </p>
-                ))}
+                <p className="font-body text-primary-foreground/80">
+                  {contact.name}: {contact.label}
+                </p>
               </div>
               <p className="text-primary-foreground/50 font-body text-sm mb-6">
                 IČ: 40010902 · DIČ: CZ6803301769
