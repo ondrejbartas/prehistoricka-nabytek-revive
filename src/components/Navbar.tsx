@@ -9,10 +9,11 @@ const links = [
   { label: "Kontakt", href: "#kontakt" },
 ];
 
-const contacts = [
-  { name: "Ondřej", phone: "+420728935142", label: "728 935 142" },
-  { name: "Stanislav", phone: "+420602203739", label: "602 203 739" },
-];
+const ondrejContact = {
+  name: "Ondřej",
+  phone: "+420728935142",
+  label: "Zavolat Ondřejovi",
+};
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -35,17 +36,12 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <div className="flex flex-col items-end text-right">
-            {contacts.map((contact) => (
-              <a
-                key={contact.phone}
-                href={`tel:${contact.phone}`}
-                className="font-body text-sm font-semibold text-primary-foreground hover:text-primary transition-colors"
-              >
-                {contact.name}: {contact.label}
-              </a>
-            ))}
-          </div>
+          <a
+            href={`tel:${ondrejContact.phone}`}
+            className="bg-primary text-primary-foreground px-5 py-2 rounded-sm font-body text-sm font-semibold hover:opacity-90 transition-opacity"
+          >
+            {ondrejContact.label}
+          </a>
         </div>
 
         <button
@@ -69,17 +65,12 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <div className="space-y-3 pt-2">
-            {contacts.map((contact) => (
-              <a
-                key={contact.phone}
-                href={`tel:${contact.phone}`}
-                className="block bg-primary text-primary-foreground px-5 py-3 rounded-sm font-body text-center font-semibold"
-              >
-                {contact.name}: {contact.label}
-              </a>
-            ))}
-          </div>
+          <a
+            href={`tel:${ondrejContact.phone}`}
+            className="block bg-primary text-primary-foreground px-5 py-3 rounded-sm font-body text-center font-semibold"
+          >
+            {ondrejContact.label}
+          </a>
         </div>
       )}
     </nav>
