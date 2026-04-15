@@ -26,32 +26,19 @@ const Contact = () => {
                 className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors"
               >
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="font-body text-lg">{contact.name}: {contact.label}</span>
+                <span className="font-body text-lg">{contact.label}</span>
               </a>
-              <a href="mailto:info@pro-int.cz" className="flex items-center gap-4 text-primary-foreground hover:text-primary transition-colors">
-                <Mail className="w-5 h-5 text-primary" />
-                <span className="font-body text-lg">info@pro-int.cz</span>
-              </a>
-              <div className="flex items-start gap-4 text-primary-foreground/80">
-                <MapPin className="w-5 h-5 text-primary mt-1" />
-                <div className="font-body">
-                  <p>Klučov 84</p>
-                  <p>Český Brod, 282 01</p>
-                </div>
-              </div>
             </div>
           </div>
 
           <div className="flex flex-col justify-center">
             <div className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-sm p-8">
               <h3 className="font-display text-xl font-semibold text-primary-foreground mb-4">
-                Pro-Int Stanislav Mužík
+                Pro-Int
               </h3>
-              <div className="space-y-2 mb-6">
-                <p className="font-body text-primary-foreground/80">
-                  {contact.name}: {contact.label}
-                </p>
-              </div>
+              <p className="text-primary-foreground/80 font-body text-sm mb-2">
+                Klučov 84, Český Brod, 282 01
+              </p>
               <p className="text-primary-foreground/50 font-body text-sm mb-6">
                 IČ: 40010902 · DIČ: CZ6803301769
               </p>

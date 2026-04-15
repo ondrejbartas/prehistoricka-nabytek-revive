@@ -12,7 +12,7 @@ const Hero = () => {
           height={1080}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/50 to-foreground/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-foreground/70 to-foreground/40" />
       </div>
 
       <div className="relative z-10 section-padding pb-16 md:pb-24 w-full max-w-5xl">
