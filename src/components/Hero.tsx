@@ -1,10 +1,5 @@
 import heroImage from "@/assets/gallery/hero-image.png";
-import { Phone } from "lucide-react";
-
-const contacts = [
-  { name: "Ondřej Mužík", phone: "+420728935142", label: "728 935 142" },
-  { name: "Stanislav Mužík", phone: "+420602203739", label: "602 203 739" },
-];
+import { Mail } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -33,16 +28,13 @@ const Hero = () => {
           Zakázková výroba nábytku z lamina i masivu. Od návrhu architekta po profesionální montáž.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.45s" }}>
-          {contacts.map((contact) => (
-            <a
-              key={contact.phone}
-              href={`tel:${contact.phone}`}
-              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-sm font-body font-semibold text-base tracking-wide hover:opacity-90 transition-opacity"
-            >
-              <Phone className="w-5 h-5" />
-              <span>{contact.name}: {contact.label}</span>
-            </a>
-          ))}
+          <a
+            href="mailto:info@pro-int.cz"
+            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 rounded-sm font-body font-semibold text-base tracking-wide hover:opacity-90 transition-opacity"
+          >
+            <Mail className="w-5 h-5" />
+            <span>Napište nám</span>
+          </a>
         </div>
       </div>
     </section>

@@ -1,9 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 
-const contacts = [
-  { name: "Ondřej Mužík", phone: "+420728935142", label: "728 935 142" },
-  { name: "Stanislav Mužík", phone: "+420602203739", label: "602 203 739" },
-];
+const contact = { name: "Stanislav Mužík", phone: "+420602203739", label: "602 203 739" };
 
 const Contact = () => {
   return (
