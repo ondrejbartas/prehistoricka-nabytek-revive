@@ -1,18 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-import kitchen1 from "@/assets/gallery/kitchen-1.jpg";
-import wardrobe1 from "@/assets/gallery/wardrobe-1.jpg";
-import bookshelf1 from "@/assets/gallery/bookshelf-1.jpg";
-import office1 from "@/assets/gallery/office-1.jpg";
-import hallway1 from "@/assets/gallery/hallway-1.jpg";
+import koupelna1 from "@/assets/gallery/koupelna-1.png";
+import koupelna2 from "@/assets/gallery/koupelna-2.png";
+import koupelna3 from "@/assets/gallery/koupelna-3.png";
+import kuchyn1 from "@/assets/gallery/kuchyn-1.png";
+import kuchyn2 from "@/assets/gallery/kuchyn-2.png";
+import kuchyn3 from "@/assets/gallery/kuchyn-3.png";
+import kuchyn4 from "@/assets/gallery/kuchyn-4.png";
+import kuchyn5 from "@/assets/gallery/kuchyn-5.png";
+import kuchyn6 from "@/assets/gallery/kuchyn-6.png";
+import loznice1 from "@/assets/gallery/loznice-1.png";
+import loznice2a from "@/assets/gallery/loznice-2a.png";
+import loznice2b from "@/assets/gallery/loznice-2b.png";
+import obyvaciPokoj1 from "@/assets/gallery/obyvaci-pokoj-1.png";
+import pokojDetsky1 from "@/assets/gallery/pokoj-detsky-1.png";
+import pokojDetsky2 from "@/assets/gallery/pokoj-detsky-2.png";
+import pokojDetsky3 from "@/assets/gallery/pokoj-detsky-3.png";
+import pokojDetsky4 from "@/assets/gallery/pokoj-detsky-4.png";
 
 const galleryItems = [
-  { src: kitchen1, alt: "Kuchyňská linka na míru", label: "Kuchyně" },
-  { src: wardrobe1, alt: "Vestavěná skříň na míru", label: "Vestavěné skříně" },
-  { src: bookshelf1, alt: "Obývací stěna s knihovnou", label: "Obývací stěny" },
-  { src: office1, alt: "Pracovna na míru", label: "Pracovny" },
-  { src: hallway1, alt: "Předsíňový nábytek", label: "Předsíně" },
+  { src: kuchyn1, alt: "Moderní kuchyňská linka na míru v světlém dekoru", label: "Kuchyně" },
+  { src: kuchyn2, alt: "Oranžová kuchyňská linka na míru do rohu", label: "Kuchyně" },
+  { src: kuchyn3, alt: "Zelená kuchyňská linka na míru s dlouhou pracovní deskou", label: "Kuchyně" },
+  { src: kuchyn4, alt: "Klasická bílá rohová kuchyň na míru", label: "Kuchyně" },
+  { src: kuchyn5, alt: "Minimalistická kuchyně s ostrůvkem a dřevěným obkladem", label: "Kuchyně" },
+  { src: kuchyn6, alt: "Rustikální dřevěná kuchyňská linka na míru", label: "Kuchyně" },
+  { src: koupelna1, alt: "Koupelnová sestava na míru s umyvadlem a úložným prostorem", label: "Koupelny" },
+  { src: koupelna2, alt: "Dřevěná koupelnová skříňka na míru s černými detaily", label: "Koupelny" },
+  { src: koupelna3, alt: "Koupelnový nábytek na míru v dekoru světlého dřeva", label: "Koupelny" },
+  { src: loznice1, alt: "Ložnice na míru s vestavěnými skříněmi nad postelemi", label: "Ložnice" },
+  { src: loznice2a, alt: "Ložnice na míru s postelí a vestavěnou šatní skříní", label: "Ložnice" },
+  { src: loznice2b, alt: "Ložnice s komodou, zrcadlem a posuvnou skříní", label: "Ložnice" },
+  { src: obyvaciPokoj1, alt: "Obývací stěna s lamelovým obkladem a TV sestavou", label: "Obývací pokoje" },
+  { src: pokojDetsky1, alt: "Dětský pokoj s pracovním stolem a úložnými skříňkami", label: "Dětské pokoje" },
+  { src: pokojDetsky2, alt: "Dětský pokoj s vyvýšenou postelí a úložným prostorem", label: "Dětské pokoje" },
+  { src: pokojDetsky3, alt: "Dětský pokoj s nízkými postelemi a vestavěnými zásuvkami", label: "Dětské pokoje" },
+  { src: pokojDetsky4, alt: "Vestavěná skříň do dětského pokoje s otevřenými policemi", label: "Dětské pokoje" },
 ];
 
 const Gallery = () => {
@@ -25,6 +49,24 @@ const Gallery = () => {
   const next = () =>
     setLightbox((c) => (c !== null ? (c + 1) % galleryItems.length : null));
 
+  useEffect(() => {
+    if (lightbox === null) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") prev();
+      if (event.key === "ArrowRight") next();
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
   return (
     <section id="galerie" className="py-24 bg-background">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-24">
@@ -32,15 +74,16 @@ const Gallery = () => {
           Galerie realizací
         </h2>
         <p className="text-muted-foreground text-center mb-16 max-w-2xl mx-auto font-body">
-          Nahlédněte do našich dokončených projektů
+          Výběr z našich skutečných realizací kuchyní, koupelen, ložnic i dětských pokojů.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {galleryItems.map((item, i) => (
             <button
-              key={i}
+              key={`${item.label}-${i}`}
               onClick={() => openLightbox(i)}
-              className="group relative overflow-hidden rounded-lg aspect-[4/3] focus:outline-none focus:ring-2 focus:ring-ring"
+              className="group relative overflow-hidden rounded-lg bg-muted aspect-[4/3] focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+              aria-label={`Otevřít fotku: ${item.alt}`}
             >
               <img
                 src={item.src}
@@ -48,10 +91,10 @@ const Gallery = () => {
                 loading="lazy"
                 width={800}
                 height={600}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex items-end">
-                <span className="text-primary-foreground font-display font-semibold text-lg px-4 py-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/85 via-foreground/25 to-transparent px-4 py-4 text-left">
+                <span className="block font-display text-lg font-semibold text-primary-foreground drop-shadow-lg">
                   {item.label}
                 </span>
               </div>
@@ -60,42 +103,51 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Lightbox */}
       {lightbox !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
-          onClick={closeLightbox}
-        >
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/95 p-4 sm:p-6" onClick={closeLightbox}>
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white/80 hover:text-white p-2"
+            className="absolute right-4 top-4 rounded-full border border-primary-foreground/20 bg-background/10 p-2 text-primary-foreground transition-colors hover:bg-background/20"
             aria-label="Zavřít"
           >
-            <X className="w-8 h-8" />
+            <X className="h-7 w-7" />
           </button>
           <button
-            onClick={(e) => { e.stopPropagation(); prev(); }}
-            className="absolute left-4 text-white/80 hover:text-white p-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              prev();
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full border border-primary-foreground/20 bg-background/10 p-2 text-primary-foreground transition-colors hover:bg-background/20 sm:left-4"
             aria-label="Předchozí"
           >
-            <ChevronLeft className="w-10 h-10" />
+            <ChevronLeft className="h-8 w-8" />
           </button>
           <button
-            onClick={(e) => { e.stopPropagation(); next(); }}
-            className="absolute right-4 text-white/80 hover:text-white p-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              next();
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full border border-primary-foreground/20 bg-background/10 p-2 text-primary-foreground transition-colors hover:bg-background/20 sm:right-4"
             aria-label="Další"
           >
-            <ChevronRight className="w-10 h-10" />
+            <ChevronRight className="h-8 w-8" />
           </button>
-          <img
-            src={galleryItems[lightbox].src}
-            alt={galleryItems[lightbox].alt}
-            className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-          <p className="absolute bottom-6 text-white/90 font-display text-lg">
-            {galleryItems[lightbox].label}
-          </p>
+
+          <div className="max-w-6xl" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={galleryItems[lightbox].src}
+              alt={galleryItems[lightbox].alt}
+              className="max-h-[78vh] w-auto max-w-[88vw] rounded-lg object-contain shadow-2xl"
+            />
+            <div className="mt-4 text-center">
+              <p className="font-display text-xl font-semibold text-primary-foreground">
+                {galleryItems[lightbox].label}
+              </p>
+              <p className="mt-1 font-body text-sm text-primary-foreground/80">
+                {galleryItems[lightbox].alt}
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </section>
